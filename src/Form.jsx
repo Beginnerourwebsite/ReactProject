@@ -1,20 +1,40 @@
 import React, { useState } from 'react'
-import Searching from './Searching'
+import TableBind from './TableBind'
 
 export default function Form() {
-	let [Name, setName] = useState([])//database
-	// let [Name2, setName2] = useState("Shriji")
-	function saveData() {
-		let userName = document.getElementById("Name").value
-		setName([...Name, userName])
+	let [UserData, setUserData] = useState([])//arary of Object
+	function SaveData() {
+		let UserName = document.getElementById("Name").value
+		let UserAddress = document.getElementById("Address").value
+		let UserPhone = document.getElementById("Phone").value
+
+		let Obj = {
+			Name: UserName,
+			Phone: UserPhone,
+			Address: UserAddress
+		}
+		// console.log(Obj)
+		setUserData([...UserData, Obj])
+
 	}
+	// [
+	// 	{
+	// 			Name: "UserName",
+	// 			Phone: "UserPhone",
+	// 			Address: "UserAddress"
+	// 		}
+	// ]
 	return (
 		<div>
-
-			<input type="text" placeholder='Name' name="" id="Name" />
-			<button onClick={saveData}>Save</button>
-			<Searching userNames={Name} />
-			{/* <Searching pankaj={Name} Data={Name2} /> */}
+			<input type="text" name="" placeholder='Name' id="Name" />
+			<input type="text" name="" placeholder='Address' id="Address" />
+			<input type="number" name="" placeholder='Phone' id="Phone" />
+			<button onClick={SaveData}>Save</button>
+			<TableBind Data={UserData} />
 		</div>
 	)
 }
+
+// API
+// Fatch|| Axios
+// UseEffect
