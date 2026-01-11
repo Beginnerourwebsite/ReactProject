@@ -1,12 +1,13 @@
 import React from 'react'
 
 export default function TableBind(a) {
-
+	//With Link (CDN)
+	//With Package
 	// console.log(a.Data)
 	return (
 		<div>
 
-			<table border={"1"}>
+			<table className='table table-bordered table-dark table-hover table-striped'>
 				<thead>
 					<tr>
 						<th>Sr No.</th>
@@ -27,10 +28,10 @@ export default function TableBind(a) {
 							console.log(Value)
 
 							return <tr>
-								<td>{index+1}</td>
-								<td>{Value.Name}</td>
-								<td>{Value.Address}</td>
-								<td>{Value.Phone}</td>
+								<td>{index + 1}</td>
+								<td>{Value.Name||Value.name}</td>
+								<td>{Value.Address||Value.address.city}</td>
+								<td>{Value.Phone||Value.phone}</td>
 							</tr>
 						})
 					}
