@@ -1,24 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Ref from './12Jan2026/Ref'
-import ApiDatas from './14Jan2026/ApiDatas'
-import Form from './11Jan2026/Form'
-import DataUseEffect from './DataUseEffect'
-import Default from './default'
-// import Form from './Form'
-// import GetApi from './GetApi'
-
-
-
+import App from './App'
 createRoot(document.getElementById('root')).render(
 
-  <StrictMode>
-    {/* <Form/> */}
-    {/* <DataUseEffect/> */}
-    <Default/>
-    {/* <ApiDatas /> */}
-    {/* <GetApi/> */}
-  </StrictMode>,
+	<StrictMode>
+		<App />
+	</StrictMode>,
 )
 
 
+//how to stop page reload on clicking link in react js
+//full project load (time consum,slow,its beahaver like normal html page)
