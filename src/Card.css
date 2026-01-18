@@ -1,0 +1,43 @@
+.UserCard {
+	width: 380px;
+	border: 1px solid #ccc;
+	height: 185px;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.UserCard .Image {
+	height: 90%;
+	width: 40%;
+	margin-left: 10px;
+	border-radius: 10px;
+	border: 1px solid rgb(216, 209, 209);
+}
+
+.UserCard .UserDetails {
+	height: 100%;
+	width: 58%;
+	padding: 10px;
+}
+
+.UserCard .UserName {
+	font-weight: bold;
+}
+
+.UserCard .UserMail {
+	font-weight: 300;
+	color: rgb(10, 9, 9);
+}
+.UserCard .UserOtherDetails{
+	font-size: 14px;
+}
+.UserCard .UserOtherDetails table, th, td {
+  border: 1px solid rgb(233, 229, 229);
+  border-collapse: collapse;
+  padding: 5px;
+}
+.UserCard .UserOtherDetails table{
+margin-top: 10px;
+
+	width: 100%;
+}
