@@ -1,4 +1,37 @@
 # 📌 Today’s Topics Covered (React JS)
+
+
+# 📌 React User Card Project
+
+This project is a simple React application that fetches user data from an API and displays it in a card-based UI using React Hooks and Props.
+
+---
+
+## 🚀 Project Features
+
+- Fetch user data from external API
+- Display users in card format
+- Reusable Card component
+- Responsive layout using Bootstrap
+- Like and Share buttons on each card
+
+---
+
+## 🧠 Concepts Used
+
+- useState – to store API data
+- useEffect – to fetch data on component load
+- Props – to pass data between components
+- Component Reusability
+- API Integration
+
+---
+
+## 🌐 API Used
+
+
+
+
 📅 Date: 16 January 2026
 # React Routing with React Router DOM
 
