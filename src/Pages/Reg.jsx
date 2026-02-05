@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 export default function Reg() {
   // let AdminImage=useRef()
@@ -9,21 +9,27 @@ export default function Reg() {
     let AdminEmail = document.getElementById("AdminEmail").value
     let AdminPassword = document.getElementById("AdminPassword").value
 
+    let myObjKeys = Object.keys(AdminLogin).sort(); //array of keys
+    let maxIndexNumber = Number(myObjKeys[myObjKeys.length - 1]) + 1; //length check
     let obj = {
-      1: { Name: AdminName, Email: AdminEmail, Passoword: AdminPassword, image: Url }
+      [maxIndexNumber]: { Name: AdminName, Email: AdminEmail, Passoword: AdminPassword, image: Url }
     }
     setAdminLogin({ ...AdminLogin, ...obj })
     //next
-    localStorage.setItem("AdminDetails", JSON.stringify(AdminLogin))
 
   }
+
+  useEffect(() => {
+    localStorage.setItem("AdminDetails", JSON.stringify(AdminLogin))
+
+  }, [AdminLogin])
 
   function FileUpload() {
     document.getElementById("AdminImage").click()
     // AdminImage.current.click()
   }
   // base 64
-
+//rag.complite
   function FileUploadHandling() {
     // self.files
     let UploadedFile = document.getElementById("AdminImage").files[0]
