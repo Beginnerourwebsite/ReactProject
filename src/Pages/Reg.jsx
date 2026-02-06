@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Reg() {
   // let AdminImage=useRef()
@@ -8,9 +9,9 @@ export default function Reg() {
     let AdminName = document.getElementById("AdminName").value
     let AdminEmail = document.getElementById("AdminEmail").value
     let AdminPassword = document.getElementById("AdminPassword").value
-
+    // {}
     let myObjKeys = Object.keys(AdminLogin).sort(); //array of keys
-    let maxIndexNumber = Number(myObjKeys[myObjKeys.length - 1]) + 1; //length check
+    let maxIndexNumber = Number(myObjKeys[myObjKeys.length - 1] || 0) + 1; //length check
     let obj = {
       [maxIndexNumber]: { Name: AdminName, Email: AdminEmail, Passoword: AdminPassword, image: Url }
     }
@@ -29,7 +30,7 @@ export default function Reg() {
     // AdminImage.current.click()
   }
   // base 64
-//rag.complite
+  //rag.complite
   function FileUploadHandling() {
     // self.files
     let UploadedFile = document.getElementById("AdminImage").files[0]
@@ -71,7 +72,7 @@ export default function Reg() {
           <input type="file" id='AdminImage' onChange={FileUploadHandling} accept='.jpg' style={{ display: 'none' }} />
         </div>
         <button className="btn btn-primary" onClick={handleAdminLogin}>Create Account</button>
-        <div className="link-text">Already have an account? Login here</div>
+        <div className="link-text"><Link to={"/AdminLogin"}> Already have an account? Login here </Link></div>
       </div>
     </div>
   )
