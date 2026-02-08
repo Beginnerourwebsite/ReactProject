@@ -1,25 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //create a array of name
 
-    let obj={
-      1:"Omnath",
-      2:"shriNath",
-      3:"jagannath",
-      Name:"HariNath",
-      5:"Omparkash"
-    }
-    let arr=[1,2,3,5]
-    arr.filter(function(value){
-      console.log(obj[value])//
-    })
-    // obj[5]
-  </script>
-</body>
+      let array = ["Suresh", "Mukesh", "Desnash", "Rajesh", "Omash", "Ramash"];
+
+      let a = array.forEach((element) => {
+        if (element == "Omash") {
+          return "This is ForEach Loop,Hello";
+        }
+      });
+      //forEach never Return anything
+      console.log("This is ForEach Loop", a);
+
+      let b = array.map((element) => {
+        if (element == "Omash") {
+          return true;
+        } else {
+          return false;
+        }
+
+        //not Skip undefine//''/false //userDefine Message when condition is faild
+      });
+
+      console.log("This is  Map Loop", b);
+
+      let c = array.filter((element) => {
+        if (element == "Omash") {
+          //true
+          return "This is  Filter Loop,Hello";
+        }
+        //skip if condition is faild it skip return anything its not given undefine /null etc when condition is faild
+
+        //[undefine,undefine,undefine,undefine, "This is  Map Loop,Hello"
+      }); //["Data"]
+      console.log("This is  Filter Loop", c);
+
+      // array.reduce()
+      // array.reverse()
+    </script>
+  </body>
 </html>

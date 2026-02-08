@@ -14,19 +14,20 @@ export default function Login() {
     let localData = JSON.parse(localStorage.getItem("AdminDetails"))
     console.log(localData)
 
-    Object.keys(localData).filter(function (values, index) {
-      // console.log(values)//keys
-
+    let MyResult = Object.keys(localData).filter(function (values, index) {
       let Obj = localData[values]
       if (Obj.Email == MailS && Obj.Passoword == Passwords) {
-        alert("Welcom " + Obj.Name)
-        navigate("/Summary/Event")
+        return Obj
       }
-      else {
-        alert("Wrong User Login Details")
-      }
-
     })
+
+    if (MyResult.length > 0) {
+
+      navigate("/Summary/Event")
+    }
+    else {
+      alert("Wrong User login Details")
+    }
   }
 
 
