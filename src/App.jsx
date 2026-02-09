@@ -8,18 +8,25 @@ import EventUpload from './Pages/EventUpload'
 import EventViewList from './Pages/EventViewList'
 
 export default function App() {
-  return (
-	<div>
-		<BrowserRouter>
-		<Routes>
-			<Route path='/' element={<Event/>}/>
-			<Route path='/EventDetails' element={<EventFullDetails/>}/>
-			<Route path='/AdminLogin' element={<Login/>}/>
-			<Route path='/AdminRegistration' element={<Reg/>}/>
-			<Route path='/Upload/Event' element={<EventUpload/>}/>
-			<Route path='/Summary/Event' element={<EventViewList/>}/>
-		</Routes>
-		</BrowserRouter>
-	</div>
-  )
+	// let a = 2
+	// console.log(a)
+
+
+	return (
+		<div>
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<Event />} />
+					<Route path='/EventDetails' element={<EventFullDetails />} />
+					<Route path='/AdminLogin' element={<Login />} />
+					<Route path='/AdminRegistration' element={<Reg />} />
+					<Route path='/Upload/Event' element={<EventUpload />} />
+					<Route path='/Summary/Event/:id' element={<EventViewList />} />
+				</Routes>
+			</BrowserRouter>
+		</div>
+	)
 }
+//varable
+
+//prams hook its depend on Url/Link/Routers

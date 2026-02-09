@@ -1,8 +1,18 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function EventViewList() {
 	let redirect = useNavigate();
+
+
+	let { id } = useParams()//return obj
+	// let obj = useParams()
+	// console.log(obj.id)
+
+	useEffect(function () {
+		console.log(id)
+		
+	}, [])
 
 	function logout() {
 		redirect('/AdminLogin');

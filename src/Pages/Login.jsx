@@ -21,9 +21,11 @@ export default function Login() {
       }
     })
 
+   
+
     if (MyResult.length > 0) {
 
-      navigate("/Summary/Event")
+      navigate("/Summary/Event/"+MyResult[0])
     }
     else {
       alert("Wrong User login Details")
