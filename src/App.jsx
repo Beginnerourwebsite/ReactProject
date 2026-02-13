@@ -6,12 +6,12 @@ import Login from './Pages/Login'
 import Reg from './Pages/Reg'
 import EventUpload from './Pages/EventUpload'
 import EventViewList from './Pages/EventViewList'
-
+import './Assests/Common.css'
+import Cookies from 'js-cookie'
 export default function App() {
-	// let a = 2
-	// console.log(a)
-
-
+	// Cookies.set("Abc", "this is cookie",{ expires: 7 })
+	// console.log(Cookies.get("Abc"))
+	// Cookies.remove("Abc")
 	return (
 		<div>
 			<BrowserRouter>
@@ -20,7 +20,7 @@ export default function App() {
 					<Route path='/EventDetails' element={<EventFullDetails />} />
 					<Route path='/AdminLogin' element={<Login />} />
 					<Route path='/AdminRegistration' element={<Reg />} />
-					<Route path='/Upload/Event' element={<EventUpload />} />
+					<Route path='/Upload/Event/:id' element={<EventUpload />} />
 					<Route path='/Summary/Event/:id' element={<EventViewList />} />
 				</Routes>
 			</BrowserRouter>

@@ -1,34 +1,41 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function EventViewList() {
 	let redirect = useNavigate();
+	let [UserDetails, setUserDetails] = useState({})
 
-
-	let { id } = useParams()//return obj
-	// let obj = useParams()
-	// console.log(obj.id)
+	let { id } = useParams()
 
 	useEffect(function () {
-		console.log(id)
-		
+		// console.log(id)
+
+		let localDatas = localStorage.getItem("AdminDetails")
+		let Datas = JSON.parse(localDatas)
+		console.log(Datas[id])
+		setUserDetails({ Name: Datas[id].Name, Email: Datas[id].Email, Image: Datas[id].image })
+
+
 	}, [])
 
 	function logout() {
 		redirect('/AdminLogin');
 	}
 	function CreateEvent() {
-		redirect('/Upload/Event');
+		redirect('/Upload/Event/'+id);
 	}
+
+	//low=>=>=>=>=>=>
 	return (
 		<div>
 			<div id="eventsPage" className="container wide-container">
 				<div className="navbar">
 					<div className="user-profile">
-						<div className="user-avatar" />
+						{/* <div className="user-avatar"  /> */}
+						<img src={UserDetails.Image} alt="" className="user-avatar" />
 						<div className="user-info">
-							<h3>John Doe</h3>
-							<p>john@example.com</p>
+							<h3 className='text-Capital'>{UserDetails.Name}</h3>
+							<p className='text-Capital'>{UserDetails.Email}</p>
 						</div>
 					</div>
 					<div className="nav-buttons">
