@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Cookies from 'js-cookie'
 export default function EventViewList() {
 	// let UserId = useParams()
@@ -19,7 +19,7 @@ export default function EventViewList() {
 			return
 		}
 		let UserDaetils = LocalData.filter(function (item, index) {//=1
-			// console.log(LocalData[UserId.id])
+			
 			if (index == id) {
 				return item
 			}
@@ -28,6 +28,10 @@ export default function EventViewList() {
 		})
 		setUserData(UserDaetils[0])
 	}, [])
+	function Logout() {
+		Cookies.remove("AdminId")
+		navigate("/AdminLogin")
+	}
 	// {{}}
 	return (
 		<div>
@@ -42,8 +46,8 @@ export default function EventViewList() {
 						</div>
 					</div>
 					<div className="nav-buttons">
-						<button className="btn-nav" >+ Create Event</button>
-						<button className="btn-nav btn-logout" >Logout</button>
+						<Link to={'/Upload/Event/' + id}><button className="btn-nav" >+ Create Event</button></Link>
+						<button className="btn-nav btn-logout" onClick={Logout}>Logout</button>
 					</div>
 				</div>
 				<table className="events-table table table-striped table-hover shadow-sm rounded-2">

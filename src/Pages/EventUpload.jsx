@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-
+import React, { useRef, useState } from 'react'
+import FileToBase64, {Myfun2} from '../Common/FileUploading'
 export default function EventUpload() {
   let [EventImage, setEventImage] = useState("")
+  let UploadEvents = useRef()
   function UploadImage() {
-    document.getElementById("UploadEvents").click()
+    UploadEvents.current.click()
   }
   function ImagetoBase64() {
-    let files = document.getElementById("UploadEvents").files[0]
-    let reader = new FileReader()
-    reader.readAsDataURL(files)
-    reader.onload = function () {
-      setEventImage(reader.result) //base64 string
-    }
+
+  }
+  function Submit() {
+    let data = FileToBase64("")
+    console.log(data)
   }
   return (
     <div><div id="createEventPage" className="container">
@@ -34,10 +34,10 @@ export default function EventUpload() {
           <div className="upload-icon">🖼️</div>
           <div className="upload-text">Upload event banner</div>
           <div className="upload-subtext">Recommended: 1200x600px</div>
-          <input type="file" onChange={ImagetoBase64} accept='.jpg' style={{ display: "none" }} id='UploadEvents' />
+          <input type="file" onChange={ImagetoBase64} accept='.jpg' style={{ display: "none" }} ref={UploadEvents} />
         </div>
       </div>
-      <button className="btn btn-primary">Publish Event</button>
+      <button className="btn btn-primary" onClick={Submit}>Publish Event</button>
       <button className="btn btn-secondary">Save as Draft</button>
     </div></div>
 

@@ -82,4 +82,11 @@ export default function Reg() {
       </div>
     </div>
   )
+  //component
+  //there is not a html as return (that means that is Pure Function)
 }
+// custom hook
+//Custom Function (its depend on your requirement) (reusable) (it start with use)
+
+
+
