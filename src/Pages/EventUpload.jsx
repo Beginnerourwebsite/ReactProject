@@ -1,17 +1,21 @@
 import React, { useRef, useState } from 'react'
-import FileToBase64, {Myfun2} from '../Common/FileUploading'
+// import { Myfun2, a } from '../Common/FileUploading'
+import FileToBase64 from '../Common/FileUploading'
 export default function EventUpload() {
   let [EventImage, setEventImage] = useState("")
   let UploadEvents = useRef()
   function UploadImage() {
     UploadEvents.current.click()
   }
-  function ImagetoBase64() {
+  async function ImagetoBase64() {
+    let file = UploadEvents.current.files[0]
+    // console.log(file)
+    let data = await FileToBase64(file)
+    console.log(data)
 
   }
   function Submit() {
-    let data = FileToBase64("")
-    console.log(data)
+
   }
   return (
     <div><div id="createEventPage" className="container">
