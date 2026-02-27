@@ -34,6 +34,10 @@ function FileToBase64(Myfiles) {
   //  console.log(data);
 }
 
+function GetLocalStorageData(Keys = "") {
+  return JSON.parse(localStorage.getItem(Keys));
+}
+
 function Myfun2() {
   return "this is Myfun2";
 }
@@ -45,7 +49,7 @@ let obj1 = {
 };
 export default FileToBase64;
 
-export { obj1, a, Myfun2 };
+export { obj1, a, Myfun2, GetLocalStorageData };
 
 //one default export is allowed in a file and we can import it with any name in other file
 //export { Myfun2 }; // when we have a multy function or variable in a file and we want to export all of them we use this syntax

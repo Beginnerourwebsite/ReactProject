@@ -35,6 +35,7 @@ export default function Login() {
       Cookies.set("AdminId", IndexNo)
       navigate("/Summary/Event/" + IndexNo)
     }
+
     // console.log(MatchOrnot)
 
     //unique id//storage//1 kb 2 kb 3 kb 4 kb 5 kb 6 kb 7 kb 8 kb 9 kb 10 kb (Fast Code)
@@ -75,3 +76,6 @@ export default function Login() {
 //id=? Password=?=>superadmin
 
 //Database (localstorage/sessionstorage/indexedDB/Server)
+
+//qr code generator (Api Unlimited))
+//Todo list
